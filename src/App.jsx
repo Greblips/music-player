@@ -1,12 +1,19 @@
-import './App.css';
-import EntryForm from './components/EntryForm/EntryForm';
-import MainPage from './MainPage/MainPage';
+import "./css/App.css"
+import { useEffect, useState } from "react"
+import Container from "./components/content"
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000)
+  })
+
   return (
-    // <EntryForm />;
-    <MainPage />
-  );
+    <div className="wrapper">
+      <Container loading={loading}/>
+    </div>
+  )
 }
 
-export default App;
+export default App
